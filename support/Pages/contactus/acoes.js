@@ -5,17 +5,25 @@ class Contact {
         cy.visit('http://automationpractice.com/index.php')        
         cy.get(elements.pg).click()
     }
-    preencherFormularioValido(){ 
+    formularioValido(){ 
         cy.get(elements.id).select('Customer service')
         cy.get(elements.email).type('xpto@teste.com')
         cy.get(elements.messageText).type('produto lindo')  
+    }
+    formularioMailInvalido(){ 
+        cy.get(elements.id).select('Customer service')
+        cy.get(elements.email).type('xptocom')
+        cy.get(elements.messageText).type('produto feio')  
     }  
     submeterFormulario(){   
         cy.get(elements.submit).click() 
     }   
-    assercao(){  
-        cy.get(elements.assertMessage).should('have.text', 'Your message has been successfully sent to our team.')
-    } 
+    assercaoFormularioValido(){  
+        cy.get(elements.successMessage).should('have.text', 'Your message has been successfully sent to our team.')
+    }
+    assercaoMailInvalido(){
+        cy.get(elements.dangerMessage).should('have.text', 'Invalid email address.')
+    }
 }
 
 export default Contact
