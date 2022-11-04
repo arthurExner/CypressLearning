@@ -1,10 +1,8 @@
-//'#id_contact'
-
 export const ELEMENTS = {
-    pg: "#contact-link > a",
+    pg: '[title="Contact Us"]',
     id: "#id_contact",
     email: "#email",
     messageText: "#message",
-    submit: "#submitMessage > span",
-    assertMessage: "#center_column > p"
+    submit: "#submitMessage",
+    assertMessage: ".alert.alert-success"
 }
