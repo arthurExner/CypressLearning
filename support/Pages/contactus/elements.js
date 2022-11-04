@@ -4,5 +4,6 @@ export const ELEMENTS = {
     email: "#email",
     messageText: "#message",
     submit: "#submitMessage",
-    assertMessage: ".alert.alert-success"
+    successMessage: ".alert.alert-success",
+    dangerMessage: ".alert.alert-danger li"
 }
