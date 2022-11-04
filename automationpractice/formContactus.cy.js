@@ -3,10 +3,16 @@ import Contact from "../../support/Pages/contactus/acoes";
 
 describe('Tela contact us', function(){
      const contact = new Contact()  
-     it('Mensagem email válido', function(){
+     it('Mensagem formulario válido', function(){
         contact.visitar() 
-        contact.preencherFormularioValido()
+        contact.formularioValido()
         contact.submeterFormulario()
-        contact.assercao() 
+        contact.assercaoFormularioValido() 
+    })
+    it('Mensagem email invalido', function(){
+        contact.visitar()
+        contact.formularioMailInvalido()
+        contact.submeterFormulario()
+        contact.assercaoMailInvalido()
     })
 })
