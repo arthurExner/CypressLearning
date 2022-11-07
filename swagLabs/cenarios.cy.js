@@ -1,9 +1,9 @@
 /// <reference types="cypress" />
-import CartPage from '../../pages/cart-page';
-import LoginPage from '../../pages/login-page';
-import ProductsPage from '../../pages/products-page';
-import InformationPage from '../../pages/information-page'
-import OverviewPage from '../../pages/overview-page'
+import CartPage from '../../pages/swagLabs/cart-page';
+import LoginPage from '../../pages/swagLabs/login-page';
+import ProductsPage from '../../pages/swagLabs/products-page'
+import InformationPage from '../../pages/swagLabs/information-page'
+import OverviewPage from '../../pages/swagLabs/overview-page'
 
 describe('swag-labs', function(){
     const login = new LoginPage();
