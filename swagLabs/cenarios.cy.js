@@ -4,6 +4,7 @@ import LoginPage from '../../pages/swagLabs/login-page';
 import ProductsPage from '../../pages/swagLabs/products-page'
 import InformationPage from '../../pages/swagLabs/information-page'
 import OverviewPage from '../../pages/swagLabs/overview-page'
+import { faker } from '@faker-js/faker';
 
 describe('swag-labs', function(){
     const login = new LoginPage();
@@ -11,6 +12,7 @@ describe('swag-labs', function(){
     const cart = new CartPage();
     const information = new InformationPage();
     const overview = new OverviewPage();
+    
 
     beforeEach(function(){
         login.acessar();
@@ -25,7 +27,7 @@ describe('swag-labs', function(){
     })
 
     it('Mensagem de erro usuario nao cadastrado', function(){
-        login.usuarioNaoCadastrado();
+        login.usuarioNaoCadastrado(faker.internet.userName(), faker.internet.password());
     })
 
     it('Login com sucesso', function(){
