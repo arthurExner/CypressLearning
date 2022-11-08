@@ -5,7 +5,7 @@ export default class LoginPage {
     urlHome = 'https://www.saucedemo.com/'
     error = '[data-test="error"]'
     title = '.title'
-
+    
     acessar(){
         cy.visit(this.urlHome)
         cy.url().should('include','saucedemo')
@@ -27,8 +27,8 @@ export default class LoginPage {
         this.login('userr','')
         cy.get(this.error).should('have.text','Epic sadface: Password is required')
     }
-    usuarioNaoCadastrado(){
-        this.login('user', 'secret_sauce')
+    usuarioNaoCadastrado(username, senha){
+        this.login(username, senha)
         cy.get(this.error).should('have.text','Epic sadface: Username and password do not match any user in this service')
     }
     loginComSucessoBtn(){
